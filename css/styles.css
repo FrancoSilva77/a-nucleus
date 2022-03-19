@@ -40,10 +40,16 @@ img {
   max-width: 100%;
   display: block;
 }
+
 [class$="__contenedor"] {
   max-width: 120rem;
   margin: 0 auto;
   width: 90%;
+}
+
+[class$="__heading"] {
+  text-align: center;
+  margin-bottom: 5rem;
 }
 
 /* Header */
@@ -99,7 +105,6 @@ img {
 }
 
 .header__heading {
-  text-align: center;
   font-size: 3rem;
 }
 
@@ -164,43 +169,82 @@ img {
   margin-top: 3rem;
 }
 
-.nucleus__heading {
-  text-align: center;
-  margin-bottom: 5rem;
-}
-
 .nucleus__grid {
-    display: flex;
-    flex-direction: column-reverse;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 @media (min-width: 768px) {
-    .nucleus__grid {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        column-gap: 5rem;
-        align-items: center;
-    }
+  .nucleus__grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 5rem;
+    align-items: center;
+  }
 }
 
 .listado__elemento {
-    box-shadow: 0px 0px 15px 1px rgb(0 0 0 / .30);
-    padding: 2rem;
-    margin-bottom: 5rem;
-    transition: transform .3s ease-in;
+  background-color: var(--blanco);
+  box-shadow: 0px 0px 15px 1px rgb(0 0 0 / 0.3);
+  padding: 2rem;
+  margin-bottom: 5rem;
+  transition: transform 0.3s ease-in;
 }
 
 .listado__elemento:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .listado__heading {
-    font-size: 3rem;
-    color: var(--primario);
-    margin: 0;
+  font-size: 3rem;
+  color: var(--primario);
+  margin: 0;
 }
 
 .listado__texto {
-    margin: 0;
-    font-size: 2rem;
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Seguridad */
+.seguridad {
+  background-color: var(--primario);
+  padding: 20rem 0;
+  position: relative;
+  margin: 10rem 0;
+  overflow: hidden;
+}
+
+.seguridad::before,
+.seguridad::after {
+  background-color: var(--blanco);
+  content: "";
+  height: 20rem;
+  width: 120%;
+  position: absolute;
+}
+
+.seguridad::before {
+    top: -10rem;
+    left: 0;
+    transform: rotate(3deg);
+}
+
+.seguridad::after {
+    bottom: -10rem;
+    left: 0;
+    transform: rotate(3deg);
+}
+
+.seguridad__heading {
+  color: var(--blanco);
+}
+
+@media (min-width: 768px) {
+  .seguridad__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+    align-items: center;
+  }
 }
